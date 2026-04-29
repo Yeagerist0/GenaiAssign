@@ -1,0 +1,11 @@
+# Reflection (Prompt Engineering Assignment)
+
+Building this chatbot made one thing very clear: prompt quality defines product quality. I started with simple persona instructions, but early outputs sounded generic and interchangeable. The model gave "good advice," but not advice that felt distinct to each personality. The biggest improvement came when I stopped writing shallow labels and started designing each system prompt like a behavior contract: communication style, values, response shape, and hard boundaries. Once I added richer persona context and examples, the difference in tone became obvious.
+
+The few-shot examples were the highest-leverage addition. Before few-shots, persona responses drifted into a default assistant style after a few turns. After adding three examples per persona, each one developed a reliable rhythm: execution-heavy for Anshuman, strategic/systemic for Abhimanyu, and stepwise-teaching for Kshitij. This was the first time I could see prompt engineering behaving less like "instruction writing" and more like interface design for model behavior.
+
+The GIGO principle (Garbage In, Garbage Out) showed up repeatedly. Any vague prompt produced vague output, even when the model itself was strong. If I wrote "be helpful and motivating," I got generic motivational text. If I specified constraints like response length, one follow-up question, and no guaranteed outcomes, the quality and consistency improved immediately. The model was not "failing"; my instructions were incomplete. Better inputs reduced cleanup work downstream.
+
+I also learned that guardrails are not optional in persona simulations. Without explicit constraints, the bot can over-claim, invent details, or speak too authoritatively. Constraints around factuality, harmful requests, and no guarantees kept the output safer and more credible.
+
+If I were to improve this further, I would add evaluation scripts for persona consistency and drift detection across multi-turn chats. I would also expand persona research with stronger citation-backed examples and add a memory strategy for longer conversations while preserving persona fidelity. Finally, I would run user tests to measure whether people familiar with these personalities can correctly identify who they are chatting with. That would make the project less "it seems good" and more evidence-driven.
